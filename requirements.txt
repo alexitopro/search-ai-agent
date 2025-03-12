@@ -2,3 +2,5 @@ openai
 serpapi
 streamlit
 google-search-results
+langchain
+langchain_openai
