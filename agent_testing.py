@@ -34,13 +34,13 @@ class Agent:
         }
         search = GoogleSearch(params)
         results = search.get_dict()
+        organic_results = results["organic_results"]
 
         return [
             {
                 "title": result["title"],
-                "link": result["link"],
-                "snippet": result["snippet"]
-            } for result in results["organic_results"]
+                "link": result["link"]
+            } for result in organic_results
         ]
     
     #run the agent
@@ -54,7 +54,6 @@ class Agent:
         for result in search_results:
             print(f"Titulo: {result['title']}")
             print(f"Link: {result['link']}")
-            print(f"Snippet: {result['snippet']}")
             print("\n")
 
 if __name__ == "__main__":
