@@ -78,7 +78,7 @@ llm = ChatOpenAI(model = "gpt-4o-mini", temperature = 0, api_key = os.getenv("OP
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", """
-            Eres un asistente de trámites académicos de la PUCP. Usa tus herramientas para responder preguntas y puedes usar múltiples herramientas para responder la pregunta.
+            Eres un agente de IA de trámites académicos de la PUCP. Usa tus herramientas para responder preguntas y puedes usar múltiples herramientas para responder la pregunta. Recuerda que la respuesta debe ser clara y con un tono amigable.
         
             Si no tienes una herramienta para responder la pregunta, dilo.
           """),
@@ -99,6 +99,3 @@ agent = create_openai_tools_agent(llm, toolkit, prompt)
 # WE SET UP THE AGENT EXECUTOR TO ALLWO THE AGENT TO KEEP RUNNING UNTIL
 # IT IS READY TO RETURN ITS FINAL RESPONSE TO THE USER
 agent_executor = AgentExecutor(agent = agent, tools = toolkit, verbose = False)
-
-result = agent_executor.invoke({"input": "Quiero tener informacion para retirarme de cursos en el 2025-0"})
-print(result['output'])

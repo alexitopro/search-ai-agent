@@ -11,6 +11,7 @@ Panda Agent 007 is an AI Search Agent designed to crawl and extract academic pro
 
 ## Limitations
 
+- Message history is currently not supported in order to maintain the agent as simple as possible.
 - The tools rely slightly on CSS selectors that might change over time, although not probable.
 - It requires an OpenAI API key in order to function properly.
 
