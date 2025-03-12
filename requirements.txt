@@ -1,6 +1,6 @@
 openai
-serpapi
 streamlit
-google-search-results
 langchain
 langchain_openai
+crawl4ai
+nest_asyncio

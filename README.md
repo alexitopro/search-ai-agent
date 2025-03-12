@@ -1,11 +1,21 @@
 # search-ai-agent
-JobFetcher is an AI Search Agent designed to retrieve job postings from selected sources and match them to user preferences based on a description provided by the user. Whether you're looking for your dream job or exploring new opportunities, JobFetcher simplifies the process by delivering tailored job recommendations.
+
+Panda Agent 007 is an AI Search Agent designed to crawl and extract academic procedures from the official PUCP (Pontificia Universidad Católica del Perú) student portal. It utilizes LangChain and Playwright to navigate web pages and gather information about academic procedures effectively.
+
 ## How it works
-1. User Input: The user provides a job description describing the type of job they're interested in.
-2. Source Selection: The agent retrieves job postings from predefined sources.
-3. AI Filtering: The agent filters out job postings that are not related to the user's preferences.
-4. Results Delivery: The agent returns the curated list of job postings back to the user.
+
+1. The agent uses the `obtener_pagina_inicial()` tool to obtain the base URL.
+2. It calls `fetch_tramites()` to retrieve the list of procedures.
+3. Once the agent finds the academic procedure it uses `obtener_informacion_tramite()` in order to retrieve detailed information about the aforementioned procedure.
+4. If the desired information is not found on the current page, it uses `ir_siguiente_pagina()` to continue searching.
+
+## Limitations
+
+- The tools rely slightly on CSS selectors that might change over time, although not probable.
+- It requires an OpenAI API key in order to function properly.
+
 ## Installation
+
 1. Clone the repository
 2. Navigate to the project directory
 3. Install the required dependencies
